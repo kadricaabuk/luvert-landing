@@ -7,7 +7,7 @@ export default function Founder() {
 
       <div className="max-w-5xl mx-auto px-6">
 
-        <div className="flex gap-18 items-center">
+        <div className="flex flex-col md:flex-row gap-18 items-center">
 
           {/* Avatar */}
           <div className="flex justify-center md:justify-start">
