@@ -1,3 +1,29 @@
 * {
     font-family: var(--font-inter);
 }
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.float-slow {
+    animation: float 7s ease-in-out infinite;
+}
+
+.float-medium {
+    animation: float 5s ease-in-out infinite;
+}
+
+.float-fast {
+    animation: float 4s ease-in-out infinite;
+}

@@ -1,4 +1,5 @@
 import BudgetPolicies from "./(components)/budget-policies";
+import CostSpikeSection from "./(components)/cost-spike-detection";
 import FinalCTA from "./(components)/final-cta";
 import Footer from "./(components)/footer";
 import Founder from "./(components)/founder";
@@ -9,7 +10,6 @@ import ObservabilityShowcase from "./(components)/observability-showcase";
 import Pricing from "./(components)/pricing";
 import Problem from "./(components)/problem";
 import Security from "./(components)/security";
-import SupportedProviders from "./(components)/supported-providers";
 
 export default function Home() {
   return (
@@ -17,8 +17,9 @@ export default function Home() {
       <Header />
       <main className="flex flex-col w-full container-narrow p-8 md:p-12 pb-0 md:pb-0">
         <Hero />
-        <SupportedProviders />  
+        {/* <SupportedProviders />   */}
         <Problem />
+        <CostSpikeSection />
         <HowItWorks />
         <ObservabilityShowcase />
         <BudgetPolicies />
