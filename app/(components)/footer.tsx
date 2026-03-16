@@ -3,27 +3,25 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="mt-40 border-t border-neutral-800">
+    <footer className="mt-28 md:mt-40 border-t border-neutral-800">
 
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
 
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
 
           {/* Brand */}
-
           <div>
             <h3 className="text-lg font-semibold">
               Luvert
             </h3>
 
-            <p className="text-sm text-neutral-400 mt-3 leading-relaxed">
+            <p className="text-sm text-neutral-400 mt-3 leading-relaxed max-w-sm">
               Observability and cost control for AI infrastructure.
             </p>
           </div>
 
 
           {/* Product */}
-
           <div>
             <h4 className="text-sm font-semibold mb-4">
               Product
@@ -50,7 +48,6 @@ export default function Footer() {
 
 
           {/* Resources */}
-
           <div>
             <h4 className="text-sm font-semibold mb-4">
               Resources
@@ -85,13 +82,12 @@ export default function Footer() {
 
 
           {/* Social */}
-
           <div>
             <h4 className="text-sm font-semibold mb-4">
               Social
             </h4>
 
-            <div className="flex gap-4 text-neutral-400">
+            <div className="flex items-center gap-4 text-neutral-400">
 
               <a
                 target="_blank"
@@ -124,7 +120,7 @@ export default function Footer() {
 
         {/* Bottom line */}
 
-        <div className="mt-12 pt-6 border-t border-neutral-800 text-sm text-neutral-500 flex flex-col md:flex-row justify-between gap-2">
+        <div className="mt-10 md:mt-12 pt-6 border-t border-neutral-800 text-sm text-neutral-500 flex flex-col sm:flex-row items-center sm:justify-between gap-3">
 
           <span>
             © {new Date().getFullYear()} Luvert

@@ -1,15 +1,18 @@
 import { LuvertLogo } from '../(assets)/logo/LuvertLogo'
 import JoinButton from "./join-button"
 
-const header = () => {
+const Header = () => {
   return (
-    <header className="flex justify-between items-center p-6 md:p-8">
+    <header className="max-w-7xl mx-auto px-6 py-5 md:py-8 flex items-center justify-between">
+
       <LuvertLogo animated />
-      <div className="flex gap-2">
+
+      <div className="flex items-center gap-2">
         <JoinButton type="header" />
       </div>
+
     </header>
   )
 }
 
-export default header
+export default Header

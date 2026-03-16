@@ -1,6 +1,5 @@
 "use client"
 
-
 const features = [
   {
     title: "Token usage",
@@ -37,48 +36,52 @@ const features = [
 export default function ObservabilityShowcase() {
 
   return (
-    <section className="mt-40">
+    <section className="mt-28 md:mt-40">
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
 
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
+
           <p className="text-sm text-neutral-500 uppercase tracking-wider">
             Observability
           </p>
 
-          <h2 className="text-3xl font-semibold mt-3">
+          <h2 className="text-2xl sm:text-3xl font-semibold mt-3">
             See exactly how your AI is being used
           </h2>
 
-          <p className="text-neutral-400 mt-4 max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-neutral-400 mt-4 max-w-xl mx-auto">
             Luvert provides real-time visibility into tokens, models and cost spikes.
           </p>
+
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Dashboard */}
-          <div className="relative rounded-xl border border-neutral-800 bg-neutral-950 p-4 overflow-hidden">
+          <div className="relative rounded-xl border border-neutral-800 bg-neutral-950 p-3 sm:p-4 overflow-hidden">
 
             <InsightsPreview />
 
           </div>
 
+
           {/* Feature explanations */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
 
             {features.map((f, i) => {
               return (
                 <div
                   key={i}
-                  className={`p-4 rounded-lg transition bg-neutral-900 border border-neutral-800`}
+                  className="p-4 sm:p-5 rounded-lg transition bg-neutral-900 border border-neutral-800"
                 >
-                  <h3 className="font-semibold text-lg">
+                  <h3 className="font-semibold text-base sm:text-lg">
                     {f.title}
                   </h3>
 
-                  <p className="text-sm text-neutral-400 mt-1">
+                  <p className="text-sm text-neutral-400 mt-1 leading-relaxed">
                     {f.description}
                   </p>
                 </div>
@@ -95,7 +98,6 @@ export default function ObservabilityShowcase() {
   )
 }
 
-
 import { AlertTriangle, CheckCircle, Info } from "lucide-react"
 
 function InsightCard({
@@ -111,10 +113,11 @@ function InsightCard({
   explanation: string
   suggestions: string[]
 }) {
+
   const isWarning = type === "warning"
 
   return (
-    <div className="rounded-lg border border-neutral-800 bg-neutral-950 p-5 mb-2">
+    <div className="rounded-lg border border-neutral-800 bg-neutral-950 p-4 sm:p-5 mb-2">
 
       {/* label */}
       <div className="flex items-center gap-2 mb-3 text-xs font-medium">
@@ -133,31 +136,27 @@ function InsightCard({
 
       </div>
 
-      {/* title */}
       <h4 className="text-sm font-semibold mb-3">
         {title}
       </h4>
 
-      {/* context */}
       <div className="text-xs text-neutral-400 space-y-1 mb-4">
         {context.map((c, i) => (
           <div key={i}>{c}</div>
         ))}
       </div>
 
-      {/* explanation */}
-      <div className="text-xs text-neutral-400 mb-4">
+      <div className="text-xs text-neutral-400 mb-4 leading-relaxed">
         {explanation}
       </div>
 
-      {/* suggestions */}
       <div className="space-y-1">
         {suggestions.map((s, i) => (
           <div
             key={i}
             className="flex items-center gap-2 text-xs text-green-400"
           >
-            <CheckCircle className="size-3" />
+            <CheckCircle className="size-3 flex-shrink-0" />
             {s}
           </div>
         ))}

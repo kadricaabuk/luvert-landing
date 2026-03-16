@@ -55,7 +55,6 @@ export default function HowItWorks() {
     const [active, setActive] = useState(0)
     const [paused, setPaused] = useState(false)
 
-    // auto-rotate
     useEffect(() => {
         if (paused) return
 
@@ -67,21 +66,24 @@ export default function HowItWorks() {
     }, [paused])
 
     return (
-        <section className="mt-40" id="how-it-works">
+        <section
+            className="max-w-7xl mx-auto px-6 mt-28 md:mt-40"
+            id="how-it-works"
+        >
 
-            <h2 className="text-3xl font-semibold">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-center lg:text-left">
                 How Luvert works
             </h2>
 
-            <div className="grid lg:grid-cols-2 gap-16 mt-8 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 mt-10 items-center">
 
                 {/* Steps */}
+
                 <div
-                    className="space-y-8"
+                    className="space-y-6 sm:space-y-8"
                     onMouseEnter={() => setPaused(true)}
                     onMouseLeave={() => setPaused(false)}
                 >
-
                     {steps.map((step, i) => {
                         const Icon = step.icon
                         const isActive = active === i
@@ -91,38 +93,39 @@ export default function HowItWorks() {
                                 key={i}
                                 onMouseEnter={() => setActive(i)}
                                 onClick={() => setActive(i)}
-                                className={`group flex gap-4 cursor-pointer p-4 rounded-lg transition
-                                    ${isActive
+                                className={`group flex gap-4 cursor-pointer p-4 rounded-lg transition ${isActive
                                         ? "bg-neutral-900 border border-neutral-800 border-l-2 border-l-blue-500"
                                         : "hover:bg-neutral-900/50"
                                     }`}
                             >
+
                                 <div
-                                    className={`mt-1 transition-colors ${isActive
+                                    className={`mt-1 transition-colors shrink-0 ${isActive
                                             ? "text-white"
                                             : "text-neutral-500 group-hover:text-white"
                                         }`}
                                 >
-                                    <Icon className="size-5" />
+                                    <Icon className="size-5 sm:size-6" />
                                 </div>
 
                                 <div>
-                                    <h3 className="text-lg font-semibold">
+                                    <h3 className="text-base sm:text-lg font-semibold">
                                         {step.title}
                                     </h3>
 
-                                    <p className="text-sm text-neutral-400">
+                                    <p className="text-sm text-neutral-400 leading-relaxed">
                                         {step.description}
                                     </p>
                                 </div>
+
                             </div>
                         )
                     })}
-
                 </div>
 
                 {/* Code Panel */}
-                <div className="relative rounded-xl border border-neutral-800 bg-neutral-950 p-6 overflow-hidden min-h-[240px]">
+
+                <div className="relative rounded-xl border border-neutral-800 bg-neutral-950 p-5 sm:p-6 overflow-hidden min-h-[240px]">
 
                     <div className="text-xs text-neutral-500 mb-4">
                         Example
@@ -134,18 +137,24 @@ export default function HowItWorks() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
                     >
-                        <SyntaxHighlighter
-                            language={steps[active].language}
-                            style={vscDarkPlus}
-                            customStyle={{
-                                background: "transparent",
-                                padding: 0,
-                                margin: 0,
-                                fontSize: "13px",
-                            }}
-                        >
-                            {steps[active].code}
-                        </SyntaxHighlighter>
+
+                        <div className="overflow-x-auto">
+
+                            <SyntaxHighlighter
+                                language={steps[active].language}
+                                style={vscDarkPlus}
+                                customStyle={{
+                                    background: "transparent",
+                                    padding: 0,
+                                    margin: 0,
+                                    fontSize: "13px",
+                                }}
+                            >
+                                {steps[active].code}
+                            </SyntaxHighlighter>
+
+                        </div>
+
                     </motion.div>
 
                 </div>
