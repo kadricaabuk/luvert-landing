@@ -106,7 +106,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="mailto:hello@luvert.io"
+                href="mailto:kadri@luvert.io"
                 className="hover:text-white transition"
               >
                 <Mail className="size-5"/>
